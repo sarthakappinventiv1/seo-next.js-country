@@ -147,7 +147,7 @@ export default async function SearchSSR({ searchParams }: Props) {
             {data[activeTab].map((item, index) => (
               <Link key={index} href={`/country/${item.Iso}`}>
                 <div key={index} className="flex items-center gap-3 px-4 py-2">
-                  <Image src={item.Flag} alt={item.Name}  className="w-5 h-3 rounded" />
+                  <Image src={item.Flag} alt={item.Name}  className="w-5 h-3 rounded" width={10} height={10} />
                   <span>{item.Name}</span>
                 </div>
               </Link>
