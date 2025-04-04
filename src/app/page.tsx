@@ -5,6 +5,8 @@ import RegionCard from '@/components/RegionCard';
 import SearchSSR from '@/components/Search';
 import { Country } from '@/data/countries';
 import type { Metadata } from "next";
+import Script from "next/script";
+
 
 export const metadata: Metadata = {
     title: "virgin-eSim",
@@ -80,6 +82,63 @@ export default async function Home({ searchParams }: PageProps)  {
   return (  
    <>
     <link rel="canonical" href="https://roam.virginconnect.com" />
+
+    <Script id="gtag-consent" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied',
+          'functionality_storage': 'denied',
+          'security_storage': 'granted'
+        });
+      `}
+    </Script>
+    <Script id="hello-script">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                  dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+                gtag('config', 'G-9PBPYMKNDR');
+              `}
+    </Script>
+    
+    <Script
+        strategy="lazyOnload"
+        src="https://www.googletagmanager.com/gtag/js?id=G-9PBPYMKNDR"
+    />
+    
+    <Script
+        strategy="lazyOnload"
+        defer
+        src="https://connect.facebook.net/en_US/sdk.js"
+    />
+
+    
+
+    <Script
+      id="facebook-script"
+      strategy="lazyOnload"
+      dangerouslySetInnerHTML={{
+        __html: `
+          requestIdleCallback(() => {
+            window.fbAsyncInit = function () {
+              FB.init({
+                appId: '973032688040379',
+                xfbml: true,
+                version: 'v16.0'
+              });
+              FB.AppEvents.logPageView();
+            };
+          });
+        `,
+      }}
+    />
+
     <Navbar />
       <div className="max-w-7xl mx-auto text-center py-10">
     

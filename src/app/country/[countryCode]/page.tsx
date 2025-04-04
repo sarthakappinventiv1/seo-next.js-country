@@ -51,7 +51,6 @@ async function fetchCountryData(countryCode: string) {
   );
   const data: any = await response.json();
 
-  // console.log("Country",data);
   // const country = getCountryByISO(countryCode);
   metadata.title = `virgin-eSim | ${countryCode}`;
   jsonLd.name = `${countryCode} Travel eSim`;
