@@ -1,0 +1,11 @@
+{
+    "HomePage": {
+      "title": "Stay connected wherever you go.",
+      "ROAM":"Roam a",
+      "COUNTRY":"country"
+    },
+    "About": {
+      "title": "About Us",
+      "description": "This is the about page in English."
+    }
+  }

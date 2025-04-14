@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LanguageSwitcher from "./LanguageSwitcher/page";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -19,6 +20,8 @@ export default function Navbar() {
               Home
             </Link>
           )}
+
+          <LanguageSwitcher />
           <Link
             href="/lokalise"
             className="bg-white text-indigo-900 font-medium px-4 py-2 rounded hover:bg-gray-100"
