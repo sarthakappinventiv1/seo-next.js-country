@@ -81,7 +81,7 @@ export default async function Home({ searchParams }: PageProps)  {
   // const t = useTranslations('HomePage');
   const t = await getTranslations('HomePage'); // Uses current locale from context
 
-
+  
   return (  
    <>
     <link rel="canonical" href="https://roam.virginconnect.com" />
@@ -90,11 +90,13 @@ export default async function Home({ searchParams }: PageProps)  {
     
 
         <SearchSSR searchParams={searchParams}/>
+        {/* <h3 className="text-xl mb-8">Stay connected wherever you go.</h3> */}
         <h3 className="text-xl mb-8">{t('title')}</h3>
 
 
+
         <h1 className="text-4xl font-bold mb-4">
-          Roam a <span className="text-yellow-500">country</span>
+          {t('ROAM')} <span className="text-yellow-500">{t('COUNTRY')}</span>
         </h1>
         <div className="flex flex-wrap justify-center gap-6">
           {countries.map((country:Country) => (
